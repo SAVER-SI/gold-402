@@ -41,6 +41,9 @@ permissions: {}
 
 jobs:
   notify:
+    # Only the upstream catalog owns the 24K Labs site dispatch credentials.
+    # Fork updates are proposals; they must not notify the upstream site.
+    if: github.repository == 'Haustorium12/gold-402'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
